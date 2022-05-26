@@ -1,0 +1,14 @@
+#### Run Sync Tasks ####
+Start Sync Task Id 81423 Source:NAFL target local Table CASE_SERVICES
+
+Oracle Connection
+Connection Success
+
+Oracle Connection
+Connection Success
+oci_parse
+oci_execute
+ -- TRUNCATE TABLE NAFL_CASE_SERVICES
+Start MySQL Insert
+MySQL Bulk Insert Success
+-- Sync Completed - Number of new records 84791

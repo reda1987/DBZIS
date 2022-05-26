@@ -1,0 +1,13 @@
+#### Run Sync Tasks ####
+Start Sync Task Id 81414 Source:NAFL target local Table ALL_PATIENTS
+
+Oracle Connection
+Connection Success
+
+Oracle Connection
+Connection Success
+oci_parse
+oci_execute
+-- Sync Completed - Number of new records 0
+PHP Notice:  Undefined variable: targetConnection in /root/DBZIS/app/Synchronizer.php on line 83
+PHP Notice:  Undefined variable: currentLastKey in /root/DBZIS/app/Synchronizer.php on line 88

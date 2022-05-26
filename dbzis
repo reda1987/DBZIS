@@ -1,0 +1,71 @@
+#!/usr/bin/env php
+<?php
+namespace dbzis;
+
+ini_set('memory_limit', '-1');
+ini_set('max_execution_time', 0);
+// error_reporting(E_STRICT);
+
+$pwd                = __DIR__;
+$appDir             = $pwd . '/app/';
+$packageAutoloaders = scandir($appDir);
+
+foreach ($packageAutoloaders as $autoloader) {
+    $requireFile = $appDir . $autoloader;
+    if (is_file($requireFile)) {
+        require_once $requireFile;
+    }
+}
+
+$timeZone = loadConfig()["general"]["time_zone"];
+date_default_timezone_set($timeZone);
+$dbzisArgs = array("-s", "-c", "--tablejson", "-ss", "--cleanlogs", "--merge", "--smerge", "--checkmerge", "--setCustAcc");
+if (isset($argv[1])) {
+    if (in_array($argv[1], $dbzisArgs)) {
+        if ($argv[1] == "-c") {
+            echo "#### Generate Sync Tasks ####" . PHP_EOL;
+            generateSyncTasks();
+        } elseif ($argv[1] == "-s") {
+            echo "#### Run Sync Tasks ####" . PHP_EOL;
+            syncExe();
+        } elseif ($argv[1] == "--tablejson") {
+            if ($argv[2]) {
+                createTableJson($argv[2]);
+            } else {
+                echo "Please provide table name " . PHP_EOL;
+            }
+        } elseif ($argv[1] == "-ss") {
+            if (isset($argv[2]) && isset($argv[3])) {
+                echo "#### Run Sync Tasks ####" . PHP_EOL;
+                syncExe($argv[2], $argv[3]);
+            } elseif (isset($argv[2])) {
+                echo "#### Run Sync Tasks ####" . PHP_EOL;
+                syncExe($argv[2]);
+            }
+        } elseif ($argv[1] == "--cleanlogs") {
+            echo "#### Cleaning Log Files ####" . PHP_EOL;
+            cleanLogs();
+        } elseif ($argv[1] == "--merge") {
+            echo "#### Start Merge ####" . PHP_EOL;
+            merge();
+        } elseif ($argv[1] == "--smerge") {
+            echo "#### Start Merge ####" . PHP_EOL;
+            mergeSourceTableData($argv[2], $argv[3]);
+        } elseif ($argv[1] == "--checkmerge") {
+            echo "#### Check Merge ####" . PHP_EOL;
+            checkMerge($argv[2], $argv[3]);
+        } elseif ($argv[1] == "--setCustAcc") {
+            setCustAcc();
+        }
+    } else {
+        echo "Unknown option/command " . PHP_EOL;
+    }
+} else {
+    echo "No option/command found" . PHP_EOL;
+}
+{
+
+}
+{
+
+}

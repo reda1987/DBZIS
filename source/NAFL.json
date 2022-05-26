@@ -1,0 +1,426 @@
+{
+  "type": "oracle",
+  "connection": {
+    "host": "10.1.1.130",
+    "port": 1521,
+    "username": "manten",
+    "password": "manten123",
+    "database": "MANTEN",
+    "sid": "NAFL",
+    "SERVICE_NAME": "NAFL",
+    "encoding": "AL32UTF8"
+  },
+  "tables": {
+    "ALL_PATIENTS": {
+      "columns": {
+        "PATIENT_SER": {
+          "required": true,
+          "convert": false
+        },
+        "CUST_ACC": {
+          "required": true,
+          "convert": false
+        },
+        "PATIENT_ANAME": {
+          "required": true,
+          "convert": true,
+          "convertFrom": "AR8MSWIN1256",
+          "convertTo": "UTF8"
+        },
+        "PATIENT_ENAME": {
+          "required": true,
+          "convert": true,
+          "convertFrom": "AR8MSWIN1256",
+          "convertTo": "UTF8"
+        },
+        "SEX": {
+          "required": true,
+          "convert": true,
+          "convertFrom": "AR8MSWIN1256",
+          "convertTo": "UTF8"
+        },
+        "NATIONALITY": {
+          "required": true,
+          "convert": false
+        },
+        "BIRTH_DATE": {
+          "required": true,
+          "convert": false
+        },
+        "TEL_NO": {
+          "required": true,
+          "convert": false
+        },
+        "TEL_NO2": {
+          "required": true,
+          "convert": false
+        },
+        "TEL_NO3": {
+          "required": true,
+          "convert": false
+        },
+        "FILE_TYPE": {
+          "required": true,
+          "convert": false
+        },
+        "INSURANCE_NO": {
+          "required": true,
+          "convert": false
+        },
+        "INSURANCE_CARD_": {
+          "required": true,
+          "convert": false
+        },
+        "ID_NO": {
+          "required": true,
+          "convert": false
+        }
+      },
+      "settings": {
+        "syncEvery": 1,
+        "timeUnit": "minute",
+        "syncKeys": {
+          "PATIENT_SER": ">"
+        },
+        "WHERE":"OPENING_DATE IS NOT NULL  AND OPENING_DATE >'20151231'",
+        "target": [
+          "local"
+        ]
+      }
+    },
+    "INV_HD": {
+      "columns": {
+        "INVNO": {
+          "required": true,
+          "convert": false
+        },
+        "INVDATE": {
+          "required": true,
+          "convert": false
+        },
+        "CASE_SER": {
+          "required": true,
+          "convert": false
+        },
+        "CLINC_ACC": {
+          "required": true,
+          "convert": false
+        },
+        "CASHMETHOD": {
+          "required": true,
+          "convert": false
+        },
+        "TOT_PAID_AMNT": {
+          "required": true,
+          "convert": false
+        },
+        "TOT_CASH_AMNT": {
+          "required": true,
+          "convert": false
+        },
+        "INVSTATUS": {
+          "required": true,
+          "convert": false
+        },
+        "INV_PAIED_AMNT": {
+          "required": true,
+          "convert": false
+        },
+        "INV_PAID_AMNT": {
+          "required": true,
+          "convert": false
+        },
+        "TOT_PRICE": {
+          "required": true,
+          "convert": false
+        },
+        "TOT_ORG_PRICE": {
+          "required": true,
+          "convert": false
+        },
+        "INVUPDATE": {
+          "required": true,
+          "convert": false
+        },
+        "INV_DISCOUNT": {
+          "required": true,
+          "convert": false
+        },
+        "P_SER": {
+          "required": true,
+          "convert": false
+        }
+      },
+      "settings": {
+        "syncEvery": 1,
+        "timeUnit": "minute",
+        "syncKeys": {
+          "INVNO": ">"
+        },
+        "target": [
+          "local"
+        ]
+      }
+    },
+    "CASES": {
+      "columns": {
+        "CASE_SER": {
+          "required": true,
+          "convert": false
+        },
+        "PATIENT_SER": {
+          "required": true,
+          "convert": false
+        },
+        "CASE_DATE": {
+          "required": true,
+          "convert": false
+        },
+        "DOCTOR_CODE": {
+          "required": true,
+          "convert": false
+        },
+        "CUST_ACC": {
+          "required": true,
+          "convert": false
+        },
+        "NATIONALITY": {
+          "required": true,
+          "convert": false
+        },
+        "CATEGORY": {
+          "required": true,
+          "convert": false
+        },
+        "TOTAL_COST": {
+          "required": true,
+          "convert": false
+        },
+        "TOTAL_MED": {
+          "required": true,
+          "convert": false
+        }
+      },
+      "settings": {
+        "syncEvery": 5,
+        "timeUnit": "minute",
+        "syncKeys": {
+          "CASE_SER": ">"
+        },
+        "target": [
+          "local"
+        ]
+      }
+    },
+    "CASE_SERVICES": {
+      "columns": {
+        "CASE_SER": {
+          "required": true,
+          "convert": false
+        },
+        "SERVICE_SER": {
+          "required": true,
+          "convert": false
+        },
+        "INVNO": {
+          "required": true,
+          "convert": false
+        },
+        "SERVICE": {
+          "required": true,
+          "convert": false
+        },
+        "CLINC_ACC": {
+          "required": true,
+          "convert": false
+        },
+        "DISCOUNT": {
+          "required": true,
+          "convert": false
+        },
+        "CATEGORY": {
+          "required": true,
+          "convert": false
+        },
+        "PRICE": {
+          "required": true,
+          "convert": false
+        },
+        "COMP_PRCNT": {
+          "required": true,
+          "convert": false
+        },
+        "UOM_NO": {
+          "required": true,
+          "convert": false
+        },
+        "SERVICE_TYPE": {
+          "required": true,
+          "convert": false
+        },
+        "CREDIT_AMNT": {
+          "required": true,
+          "convert": false
+        },
+        "ORG_PRICE": {
+          "required": true,
+          "convert": false
+        },
+        "CASH_AMNT": {
+          "required": true,
+          "convert": false
+        },
+        "TOT_MED_COST": {
+          "required": true,
+          "convert": false
+        },
+        "PATIENT_SER": {
+          "required": true,
+          "convert": false
+        },
+        "DOCTOR": {
+          "required": true,
+          "convert": false
+        },
+        "SERVICE_STATUS": {
+          "required": true,
+          "convert": false
+        },
+        "SERVICE_DATE": {
+          "required": true,
+          "convert": false
+        },
+        "SERVICE_TIME": {
+          "required": true,
+          "convert": false
+        },
+        "PRINT_TYPE": {
+          "required": true,
+          "convert": false
+        },
+        "SERVICE_CLASS": {
+          "required": true,
+          "convert": false
+        },
+        "DOC_PRICE": {
+          "required": true,
+          "convert": false
+        },
+        "DOC_CASH_AMNT": {
+          "required": true,
+          "convert": false
+        },
+        "DOC_PRCNT": {
+          "required": true,
+          "convert": false
+        },
+        "DOCTOR_ACC": {
+          "required": true,
+          "convert": false
+        },
+        "SERVICE_ORG_PRICE": {
+          "required": true,
+          "convert": false
+        },
+        "SER": {
+          "required": true,
+          "convert": false
+        },
+        "RELEASE_DATE": {
+          "required": true,
+          "convert": false
+        },
+        "VAT_PRCNT": {
+          "required": true,
+          "convert": false
+        },
+        "VAT_AMNT": {
+          "required": true,
+          "convert": false
+        },
+        "CA_AMNT": {
+          "required": true,
+          "convert": false
+        },
+        "CO_AMNT": {
+          "required": true,
+          "convert": false
+        }
+      },
+      "settings": {
+        "syncEvery": 5,
+        "timeUnit": "minute",
+        "target": [
+          "local"
+        ]
+      }
+    },
+    "SERVICES": {
+      "columns": {
+        "SERVICE": {
+          "required": true,
+          "convert": false
+        },
+        "CLINC_ACC": {
+          "required": true,
+          "convert": false
+        },
+        "SERVICE_ANAME": {
+          "required": true,
+          "convert": true,
+          "convertFrom": "AR8MSWIN1256",
+          "convertTo": "UTF8"
+        },
+        "SERVICE_TYPE": {
+          "required": true,
+          "convert": false
+        },
+        "SERVICE_PRICE": {
+          "required": true,
+          "convert": false
+        },
+        "VAT_PRCNT": {
+          "required": true,
+          "convert": false
+        }
+      },
+      "settings": {
+        "syncEvery": 6,
+        "timeUnit": "hour",
+        "target": [
+          "local"
+        ]
+      }
+    },
+    "ACCOUNT": {
+      "columns": {
+        "ACC_ENAME": {
+          "required": true,
+          "convert": true,
+          "convertFrom": "AR8MSWIN1256",
+          "convertTo": "UTF8"
+        },
+        "ACC_ANAME": {
+          "required": true,
+          "convert": true,
+          "convertFrom": "AR8MSWIN1256",
+          "convertTo": "UTF8"
+        },
+        "ACC": {
+          "required": true,
+          "convert": false
+        }
+      },
+      "settings": {
+        "syncEvery": 1,
+        "timeUnit": "minute",
+        "syncKeys": {
+          "ACC": ">"
+        },
+        "target": [
+          "local"
+        ]
+      }
+    }
+  }
+}

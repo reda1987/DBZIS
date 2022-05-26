@@ -1,0 +1,14 @@
+#### Run Sync Tasks ####
+Start Sync Task Id 81360 Source:NAFL target local Table CASE_SERVICES
+
+Oracle ConnectionCConnection Success
+
+Oracle ConnectionCConnection Success
+oci_parse
+oci_execute
+ -- TRUNCATE TABLE NAFL_CASE_SERVICES
+Start MySQL Insert
+MySQL Bulk Insert Success
+-- Sync Completed - Number of new records 84778
+ line 83
+PHP Notice:  Undefined variable: currentLastKey in /root/DBZIS/app/Synchronizer.php on line 88

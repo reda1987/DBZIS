@@ -1,0 +1,43 @@
+#### Run Sync Tasks ####
+Start Sync Task Id 81464 Source:NAFL target local Table INV_HD
+
+Oracle Connection
+Connection Success
+
+Oracle Connection
+Connection Success
+oci_parse
+oci_execute
+Start MySQL Insert
+MySQL Bulk Insert Success
+-- Sync Completed - Number of new records 1
+
+Oracle Connection
+Connection Success
+
+Oracle Connection
+Connection Success
+oci_parse
+oci_execute
+-- Sync Completed - Number of new records 0
+PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /root/DBZIS/app/Synchronizer.php on line 84
+
+Oracle Connection
+Connection Success
+
+Oracle Connection
+Connection Success
+oci_parse
+oci_execute
+-- Sync Completed - Number of new records 0
+PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /root/DBZIS/app/Synchronizer.php on line 84
+
+Oracle Connection
+Connection Success
+
+Oracle Connection
+Connection Success
+oci_parse
+oci_execute
+-- Sync Completed - Number of new records 0
+PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /root/DBZIS/app/Synchronizer.php on line 84

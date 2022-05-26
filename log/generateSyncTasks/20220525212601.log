@@ -1,0 +1,20 @@
+#### Generate Sync Tasks ####
+Cleaning Tasks....
+Getting Sources
+- Getting Source NAFL
+-- Getting Source Tables ALL_PATIENTS
+-- Sync Is NOT Due ALL_PATIENTS
+-- Getting Source Tables INV_HD
+-- Sync Is Due INV_HD
+-- Sync Is NOT Due INV_HD
+-- Getting Source Tables CASES
+-- Sync Is NOT Due CASES
+-- Getting Source Tables CASE_SERVICES
+-- Sync Is Due CASE_SERVICES
+-- Add Sync Task 
+-- Sync Is NOT Due CASE_SERVICES
+-- Getting Source Tables SERVICES
+-- Sync Is NOT Due SERVICES
+-- Getting Source Tables ACCOUNT
+-- Sync Is Due ACCOUNT
+-- Sync Is NOT Due ACCOUNT
